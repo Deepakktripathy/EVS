@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/prnvbaraiya/admin-project/issues"
   },
-  "homepage": "https://github.com/prnvbaraiya/admin-project#readme"
+  "homepage": "https://github.com/prnvbaraiya/admin-project#readme",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.1.15"
+  }
 }

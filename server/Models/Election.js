@@ -13,7 +13,7 @@ const ElectionSchema = new mongoose.Schema({
   currentPhase: {
     type: String,
     default: "init", //init, registration, voting, result
-  },
+  },  
 });
 
 const Election = mongoose.model("Election", ElectionSchema);
