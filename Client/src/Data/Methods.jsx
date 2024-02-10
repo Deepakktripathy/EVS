@@ -3,13 +3,12 @@ import { serverLink } from "./Variables";
 
 export const ObjectGroupBy = (object, group) => {
   var ans = {};
-  object.forEach(function (item) {
+  object?.forEach(function (item) {
     var list = ans[item[group]];
     list ? list.push(item) : (ans[item[group]] = [item]);
   });
   return ans;
 };
-
 export const ObjectKeyReplace = (object, data, oldColumn, newColum) => {
   Object.keys(object).forEach((key) => {
     for (let i = 0; i < data.length; i++) {

@@ -13,7 +13,7 @@ const Login = () => {
   const location = useLocation();
   
   const data = location.state ? location.state.info: " ";
-  const { connectWallet, sendTransaction, getAllTransactions } =
+  const { connectWallet, sendTransaction, transactions } =
     useContext(TransactionContext);
   const [election, setElection] = useState({});
 
@@ -31,10 +31,11 @@ const Login = () => {
   }, []);
 
   const checkDuplicateVote = async (user_id) => {
-    let transactions = await getAllTransactions();
+    //let transactions = await getAllTransactions();
+    console.log(transactions);
     var electionGroup = ObjectGroupBy(transactions, "election_id");
     var candidate = ObjectGroupBy(electionGroup[election._id], "user_id");
-    if (candidate[user_id].length > 0) {
+    if (candidate[user_id]?.length > 0) {
       alert("You already Voted");
       window.location.href = "/";
     }
